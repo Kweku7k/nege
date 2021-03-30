@@ -13,7 +13,6 @@ def home():
         return render_template('index.html')
     return render_template('index.html')
 
-
 def send_sms(api_key,phone,message,sender_id):
     params = {"key":api_key,"to":phone,"msg":message,"sender_id":sender_id}
     url = 'https://apps.mnotify.net/smsapi?'+ urllib.parse.urlencode(params)
