@@ -144,6 +144,13 @@ def waecregistration():
         email=form.email.data, phone=form.phone.data, parentname=form.parentName.data, parentphone=form.parentPhone.data, course="form.course.data", image_file=pic)
         db.session.add(waecregistration)
         db.session.commit()
+        api_key = "jwqJEAkDUyxdK9ltLsIz2E0kH" #Remember to put your own API Key here
+        phone = "‭0550701304‬" #SMS recepient"s phone number
+        message = "You have recieved from a new waec application from Neges Educational Consult. Please check your dashboard for more information ."
+        sender_id = "negesEduCon" #11 Characters maximum
+        send_sms(api_key,"0550701304",message,sender_id)
+        rec_message ="Thank you for registering to Neges Educational Consult. If you have any difficult, you can reach us on ‭+233550701304‬"
+        send_sms(api_key,form.phone.data,rec_message,sender_id)
         print('Form Submitted Successfully')
         flash(f'Your registration was successful. Please check your messages ', 'success')
         return redirect(url_for('home'))
