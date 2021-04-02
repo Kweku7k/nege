@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <h4>Registrations</h4>
+
+    {% for student in students %}
+    <div class="card">
+        <a href="{{url_for('student', id=student.id)}}" style="width: auto;">
+                <h6>{{student.name}}</h4>
+        </a>
+    </div>
+            {% endfor %}
+</div>
+{% endblock %}

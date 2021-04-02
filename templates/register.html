@@ -20,6 +20,22 @@
                         {{ form.name(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+
+                <div class="form-group">
+                    {{ form.dob.label(class="form-control-label") }}
+                    {% if form.dob.errors %}
+                        {{ form.dob(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.dob.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.dob(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -45,6 +61,36 @@
                         </div>
                     {% else %}
                         {{ form.phone(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <br>
+                <legend class="border-bottom mb-4">Guardian Information</legend>
+
+                <div class="form-group">
+                    {{ form.parentName.label(class="form-control-label") }}
+                    {% if form.parentName.errors %}
+                        {{ form.parentName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.parentName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.parentName(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.parentPhone.label(class="form-control-label") }}
+                    {% if form.parentPhone.errors %}
+                        {{ form.parentPhone(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.parentPhone.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.parentPhone(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
 

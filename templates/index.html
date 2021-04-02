@@ -6,8 +6,78 @@
     <!-- <hr style="width: 90%; margin: auto;"> -->
     <!-- background-image: url('../static/img/background.jpg'); -->
 
+    <section id="hero"  >
+      <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+  
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  
+          <div class="carousel-inner" role="listbox">
+  
+            <!-- Slide 1 -->
+            <div class="carousel-item active"  style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0; background-image: url('../static/img/background.jpg');" >
+              <div class="carousel-container">
+                <div class="container">
+                  <div class="row" style="color: white;">
+                    <div class="col-md-6">
+                      <br>
+                      <h6 data-aos="fade-up" data-aos-delay="200" class="support" style="color: white;">Nege Educational Consult</h6>
+                      <h1 data-aos="fade-up" data-aos-delay="400" class="header" style="font-size: 45px; color: white;">Here, we give you a second chance.</h1>
+                      <br>
+                      <h6 data-aos="fade-up" data-aos-delay="600"class="support" style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget.</h5>
+                        <br>
+                        <div class="flex" data-aos="fade-up" data-aos-delay="800">
+                          <a href="#footer"><button class="inverse-button">Contact Us</button></a>
+                          <a href="#services"><button class="regular-button">Our Services</button></a>
+                        </div>
+                      </div>
+                </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Slide 2 -->
+            <div class="carousel-item"  style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0; background-image: url('../static/img/banner1.jpeg');" >
+              <div class="carousel-container">
+                <div class="container">
+                  <div class="row" style="color: white;">
+                    <div class="col-md-6">
+                      <br>
+                      <h6 data-aos="fade-up" data-aos-delay="200" class="support" style="color: transparent;">Nege Educational Consult</h6>
+                      <h1 data-aos="fade-up" data-aos-delay="400" class="header" style="font-size: 45px; color: transparent;">Here, we give you a second chance.</h1>
+                      <br>
+                      <h6 data-aos="fade-up" data-aos-delay="600"class="support" style="color: transparent;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget.</h5>
+                        <br>
+                        <div class="flex" data-aos="fade-up" data-aos-delay="800" style="display: none;">
+                          <a href="#footer"><button class="inverse-button">Contact Us</button></a>
+                          <a href="#services"><button class="regular-button">Our Services</button></a>
+                        </div>
+                      </div>
+                </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Slide 3 -->
+
+  
+          </div>
+  
+          <!-- <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a> -->
+  
+        </div>
+      </div>
+    </section>
+
       <div class="main">
-          <section style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0;" > 
+          <!-- <section style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0; background-image: url('../static/img/background.jpg');" > 
             <div class="container">
               <div class="row" style="color: white;">
                 <div class="col-md-6">
@@ -24,7 +94,7 @@
                   </div>
             </div>
             </div>
-          </section>
+          </section> -->
           <section id="services">
               <div class="container">
                   <!-- <br> -->
@@ -39,8 +109,7 @@
                               
                               <h4 class="header">Waec Registration</h4>
                               <h6 class="support">Some impudent text that is very good in the wat and manner in which the bloom water is tres sdfgsdfgsdfg</h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button"> Apply Now</button></a>
-
+                              <a href="{{url_for('waecregistration')}}"><button class="inverse-regular-button"> Apply Now</button></a>
                             </div>
                       </div>
 
@@ -53,7 +122,7 @@
                           <!-- </div> -->
                             <h4 class="header">Nursing Forms</h4>
                             <h6 class="support">Some impudent text that is very good in the wat and manner in which the bloom water is tres sdfgsdfgsdfg</h6>
-                            <a href="{{url_for('form')}}"><button class="inverse-regular-button"> Apply Now</button></a>
+                            <a href="{{url_for('waecregistration')}}"><button class="inverse-regular-button"> Apply Now</button></a>
 
 
                           <!-- <button class="button"> Test</button> -->
@@ -69,7 +138,7 @@
                         <!-- </div> -->
                           <h4 class="header">Remidial Registration</h4>
                           <h6 class="support">Some impudent text that is very good in the wat and manner in which the bloom water is tres sdfgsdfgsdfg</h6>
-                          <a href="{{url_for('form')}}"><button class="inverse-regular-button"> Apply Now</button></a>
+                          <a href="{{url_for('waecregistration')}}"><button class="inverse-regular-button"> Apply Now</button></a>
 
                         <!-- <button class="button"> Test</button> -->
                         </div>

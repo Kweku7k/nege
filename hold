@@ -1,0 +1,62 @@
+
+    <section id="hero"  >
+      <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
+  
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  
+          <div class="carousel-inner" role="listbox">
+  
+            <!-- Slide 1 -->
+            <div class="carousel-item active"  style="background-image: url('../static/img/background.jpg');">
+              <div class="carousel-container">
+                <div class="animate__animated carousel-content container animate__animated animate__fadeInDown animate__delay-5s">
+                  <div data-aos="fade-up" >
+                  <h1 class="animate__animated animate__fadeInDown animate__delay-5s" style="font-weight: bold;">Welcome to Defo <span>Properties</span></h1>
+                  </div>
+                  <div data-aos="fade-up">
+                    <h5 class="animate__animated animate__fadeInUp animate__delay-2s" style="color: white; ">We are a startup of real estate developers ready to build your dream</h5>
+                  </div>
+                  <div data-aos="fade-up">
+                    <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="margin-top: 0;">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url('assets/img/slides/slide2.jpg');">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  <h1 class="animate__animated animate__fadeInDown" style="font-weight: bold;">Slide 2 <span>Properties</span></h1>
+                  <h5 class="animate__animated animate__fadeInUp" style="color: white;">We are a startup of real estate developers ready to build your dream</h5>
+                  <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="margin-top: 0;">Contact Us</a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url('assets/img/slides/slide3.jpg');">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  <h1 class="animate__animated animate__fadeInDown" style="font-weight: bold;">Slide 3 <span>Properties</span></h1>
+                  <h5 class="animate__animated animate__fadeInUp" style="color: white;">We are a startup of real estate developers ready to build your dream</h5>
+                  <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="margin-top: 0;">Contact Us</a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <!-- <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a> -->
+  
+        </div>
+      </div>
+    </section>

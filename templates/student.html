@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <legend class="border-bottom mb-4">{{student.name}}</legend>
+
+
+    <h6>Phone</h4>
+    <h4>{{student.phone}}</h4>
+    <br>
+    <h6>Course</h4>
+    <h4>{{student.course}}</h4>
+    <br>
+    <h6>Date Of Birth</h6>
+    <h4>{{student.dob}}</h4>
+    <br>
+    <h6>Email</h6>
+    <h4>{{student.email}}</h4>
+    <br>
+    <h6>Parent Information</h6>
+    <h4>{{student.parentname}}</h4>
+    <h4>{{student.parentphone}}</h4>
+
+</div>
+
+{% endblock %}

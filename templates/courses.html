@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div style="display:flex; justify-content: space-between;">
+        <h4>All Courses</h4>
+        <a href="{{url_for('addcourse')}}">
+            <button class="button"><i class="fa fa-plus" aria-hidden="true"></i>Add a course</button>
+        </a>
+    </div>
+        <div class="row">
+            {% for course in courses %}
+            <div class="col-md-4">
+                <div class="card">
+                    <h4>{{course.name}}</h4>
+                    <a href="{{url_for('delete', id=course.id)}}">
+                    
+                        <h6 class="text-muted"><i style="color: red;" class="fas fa-trash-alt"></i> Delete Course</h4>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}  
