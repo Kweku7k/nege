@@ -120,7 +120,13 @@ def registrations():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    course = Courses.query.all()
+    waec = WaecRegistration.query.all()
+    registration = Registration.query.all()
+    total_course = len(course)
+    total_waec = len(waec)
+    total_registration = len(registration)
+    return render_template('dashboard.html', course = total_course, registration=total_registration, waec=total_waec)
 
 @app.route('/student/<int:id>')
 def student(id):
