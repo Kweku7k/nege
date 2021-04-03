@@ -6,14 +6,15 @@ import urllib
 from flask_migrate import Migrate
 import os
 import secrets
+from datetime import datetime
 
 app=Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///test.db'
-# migrate = Migrate(app, db)
 # from models import *
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Courses(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,6 +33,7 @@ class Registration(db.Model):
     parentname = db.Column(db.String, nullable=True)
     parentphone = db.Column(db.String, nullable=True)
     course = db.Column(db.String, nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f"Student('{self.id}', '{self.name}')"
@@ -62,6 +64,7 @@ class WaecRegistration(db.Model):
     parentphone = db.Column(db.String, nullable=True)
     course = db.Column(db.String, nullable=False)
     image_file = db.Column(db.String(200), default='default.png')
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f"Student('{self.id}', '{self.name}')"
@@ -93,11 +96,12 @@ def send_sms(api_key,phone,message,sender_id):
     print (content)
     print (url)
 
-@app.route('/form', methods=['GET','POST'])
-def form():
+@app.route('/form/<string:course>', methods=['GET','POST'])
+def form(course):
     form = RegistrationForm()
     if form.validate_on_submit():
-        registration = Registration(name=form.name.data, dob=form.dob.data, email=form.email.data, phone=form.phone.data, parentname=form.parentName.data, parentphone=form.parentPhone.data, course="form.course.data")
+        print(course)
+        registration = Registration(name=form.name.data, dob=form.dob.data, email=form.email.data, phone=form.phone.data, parentname=form.parentName.data, parentphone=form.parentPhone.data, course=course)
         db.session.add(registration)
         db.session.commit()
         print('Form has validated successfully')
@@ -182,7 +186,7 @@ def addcourse():
         course = Courses(name=form.name.data, description=form.description.data)
         db.session.add(course)
         db.session.commit()
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('courses'))
     return render_template('addcourse.html', form=form)
 
 @app.route("/courses")
@@ -198,6 +202,22 @@ def delete(id):
     db.session.commit()
     print(course)
     return redirect(url_for('courses'))
+
+@app.route("/viewcourse/<string:course>")
+def viewcourse(course):
+    print(course)
+    # course = Courses.query.filter_by(name = course).all()
+    # print(course)
+    students = Registration.query.filter_by(course = course).all()
+    return render_template("viewcourse.html", students=students, course=course)
+
+
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
+
+
+
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
     app.run(debug=True)

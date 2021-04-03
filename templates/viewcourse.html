@@ -1,20 +1,16 @@
-{% extends "dash.html" %}
+{% extends "layout.html" %}
 
 {% block body %}
 <div class="container">
-    <h4>Registrations</h4>
+    <h4>{{course}}</h4>
 
-    {% if students == [] %}
-    <H4 class="text-muted" style="text-align: center;">There is nothing here.</H4>
-{% else %}
     {% for student in students %}
     <div class="card">
         <a href="{{url_for('student', id=student.id)}}" style="width: auto;">
                 <h6>{{student.name}}</h4>
                 </a>
-                <h6 class="text-muted">{{student.date_created.strftime('%Y-%m-%d')}}</h4>
+
     </div>
             {% endfor %}
-            {% endif %}
 </div>
 {% endblock %}

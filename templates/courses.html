@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "dash.html" %}
 
 {% block body %}
 <div class="container">
@@ -12,9 +12,10 @@
             {% for course in courses %}
             <div class="col-md-4">
                 <div class="card">
-                    <h4>{{course.name}}</h4>
+                    <a href="{{url_for('viewcourse', course=course.name)}}">
+                        <h4>{{course.name}}</h4>
+                    </a>
                     <a href="{{url_for('delete', id=course.id)}}">
-                    
                         <h6 class="text-muted"><i style="color: red;" class="fas fa-trash-alt"></i> Delete Course</h4>
                     </a>
                 </div>

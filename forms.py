@@ -42,5 +42,5 @@ class WaecRegistrationForm(FlaskForm):
     parentName = StringField('Guardian Name', validators = [DataRequired()])
     parentPhone = StringField('Guardian Phone Number', validators = [DataRequired()])
     course = StringField('Course')
-    picture = FileField('Add a picture', validators=[FileAllowed(['jpg', 'png'])])
+    picture = FileField('Add a picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Register')

@@ -6,7 +6,7 @@
     <!-- <hr style="width: 90%; margin: auto;"> -->
     <!-- background-image: url('../static/img/background.jpg'); -->
 
-    <section id="hero"  >
+    <section id="hero" style="margin-top:0; margin-bottom:0;" >
       <div class="hero-container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
   
@@ -15,51 +15,23 @@
           <div class="carousel-inner" role="listbox">
   
             <!-- Slide 1 -->
-            <div class="carousel-item active"  style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0; background-image: url('../static/img/background.jpg');" >
-              <div class="carousel-container">
-                <div class="container">
-                  <div class="row" style="color: white;">
-                    <div class="col-md-6">
-                      <br>
-                      <h6 data-aos="fade-up" data-aos-delay="200" class="support" style="color: white;">Nege Educational Consult</h6>
-                      <h1 data-aos="fade-up" data-aos-delay="400" class="header" style="font-size: 45px; color: white;">Here, we give you a second chance.</h1>
-                      <br>
-                      <h6 data-aos="fade-up" data-aos-delay="600"class="support" style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget.</h5>
-                        <br>
-                        <div class="flex" data-aos="fade-up" data-aos-delay="800">
-                          <a href="#footer"><button class="inverse-button">Contact Us</button></a>
-                          <a href="#services"><button class="regular-button">Our Services</button></a>
-                        </div>
-                      </div>
-                </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Slide 2 -->
-            <div class="carousel-item"  style="background-color:#29339B; padding-top:10vh; padding-bottom:10vh;  width: 100vw;  background-size: cover; object-fit: cover; margin-top: 0; background-image: url('../static/img/banner1.jpeg');" >
-              <div class="carousel-container">
-                <div class="container">
-                  <div class="row" style="color: white;">
-                    <div class="col-md-6">
-                      <br>
-                      <h6 data-aos="fade-up" data-aos-delay="200" class="support" style="color: transparent;">Nege Educational Consult</h6>
-                      <h1 data-aos="fade-up" data-aos-delay="400" class="header" style="font-size: 45px; color: transparent;">Here, we give you a second chance.</h1>
-                      <br>
-                      <h6 data-aos="fade-up" data-aos-delay="600"class="support" style="color: transparent;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget.</h5>
-                        <br>
-                        <div class="flex" data-aos="fade-up" data-aos-delay="800" style="display: none;">
-                          <a href="#footer"><button class="inverse-button">Contact Us</button></a>
-                          <a href="#services"><button class="regular-button">Our Services</button></a>
-                        </div>
-                      </div>
-                </div>
-                </div>
-              </div>
-            </div>
-  
+            
             <!-- Slide 3 -->
-
+            <div class="carousel-item active"  style="background-color:#29339B; width: 100vw; padding: 0; background-size: cover; object-fit: cover; margin-top: 0; " >
+              <div class="carousel-container">
+                  <img src="../static/img/hero1.jpeg" width="100%" alt="">
+              </div>
+            </div>
+            <div class="carousel-item"  style="background-color:#29339B; width: 100vw; padding: 0; background-size: cover; object-fit: cover; margin-top: 0; " >
+              <div class="carousel-container">
+                  <img src="../static/img/hero2.jpeg" width="100%" alt="">
+              </div>
+            </div>
+            <div class="carousel-item"  style="background-color:#29339B; width: 100vw; padding: 0; background-size: cover; object-fit: cover; margin-top: 0; " >
+              <div class="carousel-container">
+                  <img src="../static/img/hero3.jpeg" width="100%" alt="">
+              </div>
+            </div>
   
           </div>
   
@@ -95,7 +67,7 @@
             </div>
             </div>
           </section> -->
-          <section id="services">
+          <section id="services" style="margin-top: 5vh;">
               <div class="container">
                   <!-- <br> -->
                   <h4 data-aos="fade-right" >Our Services</h4>
@@ -147,10 +119,6 @@
               </div>
           </section>
 
-          <section>
-            <img src="../static/img/banner1.jpeg" width="100%"/>
-          </section>
-
           <section id="about" style="background-color: #29339B; padding-top: 5vh; padding-bottom: 5vh;">
               <div class="container">
                   <!-- <h4 class="header" style="color: white;">About Us</h4> -->
@@ -194,7 +162,7 @@
                               <h4 class="heading">Mathematics</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form',course="Mathematics")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
                           </div>
                         </div>
 
@@ -208,7 +176,7 @@
                               <h4 class="heading">Social Studies</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form', course="Social Studies")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
 
 
                           </div>
@@ -224,7 +192,7 @@
                               <h4 class="heading">English</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form', course="English")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
 
 
                           </div>
@@ -240,7 +208,7 @@
                               <h4 class="heading">Integrated Science</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form', course="Integrated Science")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
 
 
                           </div>
@@ -256,7 +224,7 @@
                               <h4 class="heading">Electricals</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form', course="Electricals")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
 
 
                           </div>
@@ -272,7 +240,7 @@
                               <h4 class="heading">Integrated Science</h4>
 
                               <h6 class="support">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
-                              <a href="{{url_for('form')}}"><button class="inverse-regular-button" style="width: auto;">Contact Us</button></a>
+                              <a href="{{url_for('form', course="Maths")}}"><button class="inverse-regular-button" style="width: auto;">Apply Now</button></a>
 
                           </div>
                         </div>
@@ -290,7 +258,7 @@
                 <br>
                 <h6 class="support" style="color: white;">Neges Educational Consult</h6>
                 <hr color="white">
-
+                <h6 style="font-weight: 300;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio earum rerum, labore veniam praesentium officiis vel incidunt sunt amet autem minus fugiat odio. Quam architecto eos doloribus voluptates harum quasi?</h6>
               </div>
               <div class="col-md-1">
                 
@@ -299,13 +267,12 @@
                 <br>
                 <h6 class="support" style="color: white;">Useful Links</h6>
                 <hr color="white">
-                <ul>
-                  <li>Home</li>
-                  <li>Technologies</li>
-                  <li>Features</li>
-                  <li>Pricing</li>
-                  <li>Partners</li>
-                  <li>About Us</li>
+                <ul class="lists">
+                  <a href="#home"><li>Home</li></a>
+                  <a href="#services"><li>Services</li></a>
+                  <a href="#about"><li>About</li></a>
+                  <a href="{{url_for("gallery")}}"><li>Gallery</li></a>
+                  <a href="#courses"><li>Courses</li></a>
                 </ul>
               </div>
               <div class="col-md-1"></div>
@@ -317,8 +284,8 @@
                 <hr color="white">
   
                 <h6 class="support" style="color: white;">Address: Accra, Ghana</h6>
-                <h6 class="support" style="color: white;">Call: ‭+233 55 070 1304‬</h6>
-                <h6 class="support" style="color: white;">Email: info@negesconsult.com</h6>
+                <a href="tel:0550701304"><h6 class="support" style="color: white;">Call: ‭+233 55 070 1304‬</h6></a>
+                <a href="mailto:info@negesconsult.com"><h6 class="support" style="color: white;">Email: info@negesconsult.com</h6></a>
               </div>
             </div>
           </div>
