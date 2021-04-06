@@ -1,6 +1,6 @@
 from flask import Flask,redirect,url_for,render_template,request, flash
 from flask_sqlalchemy import SQLAlchemy
-from forms import RegistrationForm, WaecRegistrationForm, AddCourse
+from forms import RegistrationForm, WaecRegistrationForm, AddCourse, NursingRegistrationForm
 import urllib.request, urllib.parse
 import urllib
 from flask_migrate import Migrate
@@ -68,6 +68,34 @@ class WaecRegistration(db.Model):
 
     def __repr__(self):
         return f"Student('{self.id}', '{self.name}')"
+
+
+class NursingRegistration(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String)
+    lastname = db.Column(db.String)
+    othernames = db.Column(db.String)
+    gender = db.Column(db.String)
+    dateOfBirth = db.Column(db.String)
+    placeOfBirth = db.Column(db.String)
+    telephone = db.Column(db.String)
+    region = db.Column(db.String)
+    district = db.Column(db.String)
+    country = db.Column(db.String)
+    nationality = db.Column(db.String)
+    languages = db.Column(db.String)
+    medicalCondition = db.Column(db.String)
+    address = db.Column(db.String)
+    regionDistrict = db.Column(db.String)
+    digitalAddress = db.Column(db.String)
+    email = db.Column(db.String)
+    guardianName = db.Column(db.String)
+    indexNo = db.Column(db.String)
+    examsYear = db.Column(db.String)
+    waecCourse = db.Column(db.String)
+    def __repr__(self):
+        return f"Nursing Student('{self.id}', '{self.lastname}')"
+
 
 
 def save_picture(form_picture):
@@ -194,6 +222,17 @@ def courses():
     courses = Courses.query.all()
     return render_template('courses.html',courses=courses) 
 
+@app.route('/nursing', methods=['POST','GET'])
+def nursing():
+    form = NursingRegistrationForm()
+    if form.validate_on_submit():
+        newNursingStudent = NursingRegistration(lastname=form.surname.data, firstname=form.firstName.data, othernames=form.otherNames.data, gender=form.gender.data, dateOfBirth=form.dateOfBirth.data, placeOfBirth=form.placeOfBirth.data, telephone=form.telephone.data, region=form.region.data, district=form.district.data, country=form.country.data, nationality=form.nationality.data, languages=form.languages.data, medicalCondition=form.medicalCondition.data, address=form.address.data, regionDistrict=form.regionDistrict.data, digitalAddress = form.digitalAddress.data, email=form.email.data, guardianName=form.guardianName.data, indexNo=form.indexNo.data, examsYear=form.examsYear.data, waecCourse=form.waecCourse.data )
+        db.session.add(newNursingStudent)
+        db.session.commit()
+        print('Form validated successfully')
+        flash(f'Nursing form for ' + form.surname.data + ' ' + form.firstName.data + ' submitted successfully','success')
+        return redirect(url_for('home'))
+    return render_template('nursingregistration.html', form=form)
 
 @app.route("/delete/<int:id>")
 def delete(id):

@@ -44,3 +44,41 @@ class WaecRegistrationForm(FlaskForm):
     course = StringField('Course')
     picture = FileField('Add a picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Register')
+
+class NursingRegistrationForm(FlaskForm):
+    surname = StringField('Surname', validators=[DataRequired()])
+    firstName = StringField('First Name', validators=[DataRequired()])
+    otherNames = StringField('Other Names', validators=[DataRequired()])
+    gender = StringField('Gender', validators=[DataRequired()])
+    dateOfBirth = StringField('Date Of Birth', validators=[DataRequired()])
+    placeOfBirth = StringField('Place Of Birth', validators=[DataRequired()])
+    telephone = StringField('Telephone Number', validators=[DataRequired()])
+    region = StringField('Region', validators=[DataRequired()])
+    district = StringField('District', validators=[DataRequired()])
+    country = StringField('Date Of Birth', validators=[DataRequired()])
+    nationality = StringField('Nationality', validators=[DataRequired()])
+    languages = StringField('Languages', validators=[DataRequired()])
+    medicalCondition = StringField('Medical Conditions ', validators=[DataRequired()])
+    address = StringField('Address', validators=[DataRequired()])
+    regionDistrict = StringField('Region District', validators=[DataRequired()])
+    digitalAddress = StringField('Digital Address', validators=[DataRequired()])
+    email = StringField('Email Address', validators=[DataRequired()])
+    # Guardian Information
+    guardianName = StringField('Name Of Guardian', validators=[DataRequired()])
+    phoneNumber = StringField('Phone Number', validators=[DataRequired()])
+    guardianAddress = StringField('Guardian Address', validators=[DataRequired()])
+    # Academic Details
+    dateOfBirth = StringField('Date Of Birth', validators=[DataRequired()])
+    indexNo = StringField('Index Number', validators=[DataRequired()])
+    examsYear = StringField('Exams Year', validators=[DataRequired()])
+    waecCourse = StringField('Waec Course', validators=[DataRequired()])
+    # Subjects and courses!!!
+    submit = SubmitField('Register')
+    
+
+
+
+
+
+
+    

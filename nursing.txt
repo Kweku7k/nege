@@ -1,0 +1,30 @@
+Nursing 
+ Personal info 
+Surname
+First Name
+Other Names
+Gender
+Date of birth
+Place of birth
+Telephone No.
+Region
+District
+Country
+Nationality 
+Languages spoken
+Medical condition
+Address
+Region District 
+Digital address
+Email address
+
+ Other informations 
+Name of guardian 
+Phone no.
+Address
+
+Academic Details
+Index No.
+Exams Year
+Waec Course 
+Subjects and grades
