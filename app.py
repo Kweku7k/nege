@@ -200,6 +200,13 @@ def waecstudents():
     print(students)
     return render_template('waecstudents.html', students=students)
 
+
+@app.route("/nursingstudents")
+def nursingstudents():
+    students = NursingRegistration.query.all()
+    print(students)
+    return render_template('nursingstudents.html', students=students)
+
 @app.route("/waecstudent/<int:id>")
 def waecstudent(id):
     student = WaecRegistration.query.filter_by().first()

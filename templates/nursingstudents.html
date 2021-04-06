@@ -1,0 +1,20 @@
+{% extends "dash.html" %}
+
+{% block body %}
+<div class="container">
+    <h4>Nursing Registrations</h4>
+
+    {% if students == [] %}
+    <H4 class="text-muted" style="text-align: center;">There is nothing here.</H4>
+    
+    {% else %}
+        {% for student in students %}
+        <div class="card">
+            <a href="{{url_for('waecstudent', id=student.id)}}" style="width: auto;">
+                    <h6>{{student.firstname}} {{student.othernames}} {{student.lastname}}</h4>
+                    </a>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
